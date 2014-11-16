@@ -1,0 +1,13 @@
+{
+    "id": "mongo-service",
+    "kind": "Service",
+    "apiVersion": "v1beta1",
+    "port": 27017,
+    "containerPort": 27017,
+    "labels": {
+        "name": "mongodb-service"
+    },
+    "selector": {
+        "name": "mongodb"
+    }
+}

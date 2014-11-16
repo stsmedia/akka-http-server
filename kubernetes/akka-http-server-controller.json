@@ -1,0 +1,23 @@
+{
+    "id": "frontendController",
+    "kind": "ReplicationController",
+    "apiVersion": "v1beta1",
+    "desiredState": {
+        "replicas": 3,
+        "replicaSelector": {"name": "akka-http-server"},
+        "podTemplate": {
+            "desiredState": {
+                "manifest": {
+                    "version": "v1beta1",
+                    "id": "frontendController",
+                    "containers": [{
+                        "name": "akka-http-server",
+                        "image": "stsmedia/akka-http-server",
+                        "ports": [{"containerPort": 8080, "hostPort": 8080}]
+                    }]
+                }
+            },
+            "labels": {"name": "akka-http-server"}
+        }},
+    "labels": {"name": "akka-http-server"}
+}
